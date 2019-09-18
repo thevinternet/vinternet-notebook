@@ -1,0 +1,27 @@
+/*-- Default Button --*/
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/*-- Button Variants --*/
+
+.btn--primary {
+  @include button($white, $purple-1, $purple-2);
+}
+
+.btn--primary-inverse {
+  @include button($purple-1, $white, $purple-4, $purple-1);
+}
+
+.btn--warning {
+  @include button($white, $warning--dark, $warning);
+}

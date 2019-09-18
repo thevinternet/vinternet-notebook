@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $base-spacing-unit-extra-large;
+  @include media($medium) {
+    padding-bottom: $base-spacing-unit-tiny;
+  }
+}

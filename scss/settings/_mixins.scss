@@ -1,0 +1,126 @@
+/*-- Font Size [size] Pass Pixel value to get REM/Pixel fallback --*/
+
+@mixin fontsize($size) {
+  font-size: ($size / ($base-font-size / 1px)) + 0rem;
+}
+
+/*-- Links [link colour, link decoration, visited colour, hover colour] --*/
+
+@mixin links($link-color, $link-decoration, $visited-color, $hover-color) {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  &:visited {
+    color: $visited-color;
+  }
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+/*-- Buttons --*/
+
+@mixin btn {
+  border: 2px solid transparent;
+  border-radius: $base-spacing-unit;
+  padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+  &:link {
+    display: inline-block;
+  }
+}
+
+/*-- Button Mixin [text colour, background colour, background hover colour, border colour] --*/
+
+@mixin button(
+  $color,
+  $background-color,
+  $background-hover,
+  $border-color: transparent
+) {
+  @include btn;
+  @include links($color, none, $color, $color);
+  background-color: $background-color;
+  border-color: $border-color;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: $background-hover;
+  }
+  &:focus {
+    color: $color;
+    box-shadow: 0 0 0 ($base-spacing-unit / 2) $yellow;
+    outline: none;
+  }
+}
+
+/*--- Theme [background colour, typography, link colour, hover color, accent colour] ---*/
+
+@mixin theme($background, $color, $link-color, $hover-color, $accent) {
+  color: $color;
+  border-color: $accent;
+  background-color: $background;
+
+  a {
+    @include links($link-color, underline, $color, $hover-color);
+    &:focus {
+      color: $purple-1;
+      text-decoration: none;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $color;
+
+    &:after {
+      background-color: $accent;
+    }
+  }
+}
+
+/*-- CSS Animations [duration, timing function, direction, fill mode, delay, name] --*/
+
+@mixin css-animation(
+  $duration,
+  $timing-func,
+  $direction,
+  $fill-mode,
+  $delay,
+  $name
+) {
+  animation-duration: $duration;
+  animation-timing-function: $timing-func;
+  animation-direction: $direction;
+  animation-fill-mode: $fill-mode;
+  animation-delay: $delay;
+  animation-name: $name;
+}
+
+/*-- Media Queries [minimum size, maximum size (opt)] --*/
+
+@mixin media($min, $max: null) {
+  @if ($max) {
+    @media (max-width: $max) and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+/*-- Screen Reader --*/
+
+@mixin screenreader {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: none;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+}

@@ -1,0 +1,14 @@
+.userform {
+  padding: $base-spacing-unit $base-spacing-unit;
+  margin-top: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit-medium;
+  background-color: $grey-5;
+  border-radius: $base-spacing-unit;
+  border: solid 2px $grey-3;
+  box-shadow: 0 $base-spacing-unit-tiny $base-spacing-unit-medium -$base-spacing-unit rgba(0, 0, 0, 0.95);
+  color: $grey-1;
+  font-weight: 500;
+  @include media($medium) {
+    margin-top: 0;
+  }
+}

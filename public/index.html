@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>The Vinternet - Simple Notebook</title>
+  </head>
+  <body class="vinternet">
+    <header>
+      <h1>Simple Notebook</h1>
+    </header>
+    <main>
+      <div class="container">
+        <h2>My Notes</h2>
+        <div class="userform">
+          <div class="card">
+            <form id="viewNoteForm">
+              <div class="input-group">
+                <label for="noteId">Find Notes By Id</label>
+                <input id="noteId" name="noteId" type="text" />
+                <input
+                  id="btnGet"
+                  type="submit"
+                  value="Find Note By Id"
+                  class="btn--primary"
+                />
+                <button
+                  id="btnGetAll"
+                  type="button"
+                  value="Show All Notes"
+                  class="btn--primary-inverse"
+                >
+                  Show All Notes
+                </button>
+              </div>
+            </form>
+            <div id="noteList">
+              <div class="status--highlight">
+                <p>No Notes Shown</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Add New Note</h2>
+        <div class="userform">
+          <div class="card">
+            <form id="addNoteForm">
+              <div class="input-wrapper">
+                <label for="noteTitle">Title</label>
+                <input id="noteTitle" name="noteTitle" type="text" />
+                <label for="noteBody">Message Body</label>
+                <textarea id="noteBody" name="noteBody" type="text"></textarea>
+                <input
+                  id="btnPost"
+                  type="submit"
+                  value="Add New Note"
+                  class="btn--primary"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal" aria-role="alertdialog" aria-modal="true">
+          <div class="modal-content">
+            <p id="modalText" class="modal-text"></p>
+            <button id="modalClose" class="btn--primary">
+              Close dialog box
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer><p>&copy; The Vinternet</p></footer>
+    <script src="./api.js" type="text/javascript"></script>
+  </body>
+</html>

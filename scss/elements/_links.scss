@@ -1,0 +1,16 @@
+a {
+  // Colour, Link Decoration, Visited State & Hover State
+  @include links($purple-3, underline, $purple-3, $white);
+  &:active {
+    color: $purple-1;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+  }
+  &:focus {
+   color: $black;
+   text-decoration: none;
+   background-color: $yellow;
+   outline: 3px solid $yellow;
+ }
+}

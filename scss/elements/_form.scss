@@ -1,0 +1,127 @@
+/*-- Core Form Element Styling --*/
+
+form,
+legend,
+label {
+  margin: 0 0 $base-spacing-unit-tiny 0;
+}
+
+input,
+textarea,
+select,
+fieldset,
+button {
+  margin: 0 0 $base-spacing-unit-small 0;
+}
+
+form {
+  width: 100%;
+  > :last-child {
+    border-bottom: none;
+  }
+}
+
+label {
+  display: block;
+  line-height: 1.5;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  width: 80%;
+  display: block;
+  padding: ($base-spacing-unit-tiny - 1);
+  @include media($small) {
+    width: 50%;
+  }
+}
+
+input {
+  &[type="text"] {
+    border-radius: 0;
+    appearance: none;
+  }
+  &[type="text"] {
+    border: 2px solid $grey-3;
+  }
+  &[type="submit"] {
+    width: auto;
+    cursor: pointer;
+  }
+}
+
+select {
+  height: 48px;
+  background-color: $white;
+  border: 0;
+  outline: solid 2px $grey-3;
+  outline-offset: -2px;
+}
+
+textarea {
+  min-height: 96px;
+  border: 2px solid $grey-3;
+}
+
+/*-- Pseudo State Styling (including Mozilla focus overides) --*/
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  z-index: 10;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 4px $yellow;
+}
+
+select:focus {
+  outline: 5px solid $yellow;
+  outline-offset: -2px;
+}
+
+input[type="file"]:focus + label,
+input[type="file"].js-has-focus + label {
+  box-shadow: 0 0 0 4px $yellow;
+}
+
+/*-- Form Block Holders --*/
+
+.input-wrapper {
+  margin-bottom: $base-spacing-unit-medium;
+  border-bottom: solid 1px $grey-3;
+  & > :last-child {
+    margin-bottom: $base-spacing-unit-medium;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  label {
+    flex: 0 0 100%;
+  }
+  input[type="radio"] {
+    margin-bottom: $base-spacing-unit;
+  }
+  input[type="submit"],
+  button {
+    margin-right: $base-spacing-unit;
+    @include media($small) {
+      margin-left: $base-spacing-unit;
+      margin-right: 0;
+    }
+  }
+}

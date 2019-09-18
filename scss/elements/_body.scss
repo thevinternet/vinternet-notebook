@@ -1,0 +1,27 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  padding: 0;
+  color: $white;
+  direction: ltr;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $grey-1;
+  font-family: $base-font-stack;
+  // font-smoothing - anti aliasing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // font-feature-settings - vertically aligned typeface
+  // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
+  font-feature-settings: 'pnum';
+  // Experimental text decoration declaration (webkit only)
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+  text-decoration-skip-ink: auto;
+}

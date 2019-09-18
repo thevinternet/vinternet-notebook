@@ -1,0 +1,6 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: $base-spacing-unit-small $base-spacing-unit-tiny 0 $base-spacing-unit-tiny;
+}
