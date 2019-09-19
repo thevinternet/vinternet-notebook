@@ -5,6 +5,7 @@ A simple note taking application built using Node, Express and MongoDB which all
 ## Requirements
 
 - [NodeJS][nodejs] 6.0.0 and above
+- [MongoDB][mongodb]
 
 ## Setup & Usage
 
@@ -26,4 +27,5 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 1. Push to the branch (`git push origin my-new-feature`)
 1. Create a new Pull Request
 
-[nodejs]: http://nodejs.org
+[nodejs]: https://nodejs.org
+[mongodb]: https://www.mongodb.com
