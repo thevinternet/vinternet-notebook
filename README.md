@@ -11,7 +11,7 @@ A simple note taking application built using Node, Express and MongoDB which all
 
 - To install, clone from GitHub and run `npm install` in the cloned directory
 - Once install is complete, run `npm run start`
-- Browse to http://localhost:5000 to view application in your chosen browser
+- Browse to [http://localhost:5000](http://localhost:5000) to view application in your chosen browser
 
 ## Browser Support
 
